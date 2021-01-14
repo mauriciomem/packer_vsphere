@@ -16,13 +16,13 @@ To pass values as environment variables its recommended to replace the variables
 
 Then you can call the variables through another file, using the `-var` parameter or declaring the variables outside the script with the env variable `PKR_VAR_variable=bar`
 
-**Building image with `-var` parameter**
+#### Building image with `-var` parameter
 
 ```
   packer build -var-file variables-env.json -var 'vmname=centos7image' centos7.json
 ```
 
-**Debugging**
+#### Debugging
 
 ```
   PACKER_LOG=1 packer build -var-file variables-env.json -var 'vmname=centos7image' centos7.json
@@ -34,5 +34,5 @@ https://docs.centos.org/en-US/centos/install-guide/Kickstart2/
 https://docs.centos.org/en-US/8-docs/advanced-install/assembly_kickstart-commands-and-options-reference/
 https://www.packer.io/docs/builders/vmware/vsphere-iso
 
-#### Examples
+#### Troubleshooting
 https://github.com/jetbrains-infra/packer-builder-vsphere/issues/85
