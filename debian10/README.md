@@ -1,4 +1,4 @@
-## Centos 7 packer image build
+## Debian 10 packer image build
 
 ### Files
 
@@ -10,19 +10,25 @@
 
 Complete the connection parameters in variables.json and run 
 
+```
   packer build -var-file variables.json centos7.json
+```
 
 To pass values as environment variables its recommended to replace the variables declaration in variables.json with the folliwing sintax: ``"variable": "{{env `ENVVAR NAME`}}".``
 
 Then you can call the variables through another file, using the `-var` parameter or declaring the variables outside the script with the env variable `PKR_VAR_variable=bar`
 
-**Building image with `-var` parameter**
+#### Building image with `-var` parameter
 
-  packer build -var-file variables-env.json -var 'vmname=centos7image' centos7.json
+```
+  packer build -var-file variables-env.json -var 'vmname=deb10image' debian10.json
+```
 
-**Debugging**
+#### Debugging
 
-  PACKER_LOG=1 packer build -var-file variables-env.json -var 'vmname=centos7image' centos7.json
+```
+  PACKER_LOG=1 packer build -var-file variables-env.json -var 'vmname=deb10image' debian10.json
+```
 
 ### References
 
