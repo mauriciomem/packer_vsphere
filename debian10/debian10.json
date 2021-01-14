@@ -1,0 +1,72 @@
+{
+  "builders": [
+    {
+      "CPUs": "{{user `vm-cpu-num`}}",
+      "RAM": "{{user `vm-mem-size`}}",
+      "RAM_reserve_all": true,
+      "boot_command": [
+        "<esc><wait>",
+        "install <wait>",
+        "preseed/url=http://{{ .HTTPIP }}:{{ .HTTPPort }}/preseed.cfg <wait>",
+        "debian-installer=en_US.UTF-8 <wait>",
+        "auto <wait>",
+        "locale=en_US.UTF-8 <wait>",
+        "kbd-chooser/method=us <wait>",
+        "keyboard-configuration/xkb-keymap=us <wait>",
+        "netcfg/disable_autoconfig=true <wait>",
+        "netcfg/get_ipaddress=xxxxx <wait>",
+        "netcfg/get_netmask=xxxxxxx <wait>",
+        "netcfg/get_gateway=xxxxxx <wait>",
+        "netcfg/get_nameservers=xxxxxxxx <wait>",
+        "netcfg/get_hostname={{ .Name }} <wait>",
+        "netcfg/get_domain=lab.local <wait>",
+        "fb=false <wait>",
+        "debconf/frontend=noninteractive <wait>",
+        "console-setup/ask_detect=false <wait>",
+        "console-keymaps-at/keymap=us <wait>",
+        "grub-installer/bootdev=/dev/sda <wait>",
+        "<enter><wait>"
+      ],
+      "boot_order": "disk,cdrom",
+      "cluster": "{{user `cluster`}}",
+      "datacenter": "{{user `datacenter`}}",
+      "datastore": "{{user `datastore`}}",
+      "disk_controller_type": "pvscsi",
+      "folder": "{{user `folder`}}",
+      "guest_os_type": "debian10_64Guest",
+      "host": "{{user `host`}}",
+      "http_directory": "http",
+      "insecure_connection": "true",
+      "iso_checksum": "{{user `iso-checksum-type`}}:{{user `iso-checksum`}}",
+      "iso_urls": "{{user `iso-url`}}",
+      "network_adapters": [
+        {
+          "network": "{{user `network`}}",
+          "network_card": "vmxnet3"
+        }
+      ],
+      "password": "{{user `vcenter-password`}}",
+      "ssh_password": "{{user `ssh-password`}}",
+      "ssh_username": "{{user `ssh-username`}}",
+      "storage": [
+        {
+          "disk_size": "{{user `vm-disk-size`}}",
+          "disk_thin_provisioned": true
+        }
+      ],
+      "type": "vsphere-iso",
+      "username": "{{user `vcenter-username`}}",
+      "vcenter_server": "{{user `vcenter-server`}}",
+      "vm_name": "{{user `vm-name`}}"
+    }
+  ],
+  "provisioners": [
+    {
+      "inline": [
+        "echo 'Packer VM Build -- Ready!'"
+      ],
+      "type": "shell"
+    }
+  ]
+}
+

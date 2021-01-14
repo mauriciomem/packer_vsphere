@@ -1,0 +1,23 @@
+{
+  "vm-name": "",
+  "vcenter-server":"",
+  "vcenter-username":"",
+  "vcenter-password":"",
+  
+  "datacenter": "",
+  "datastore":"",
+  "folder": "",
+  "cluster": "",
+  "network": "",
+  
+  "vm-cpu-num": "",
+  "vm-mem-size": "",
+  "vm-disk-size": "",
+    
+  "ssh-username": "",
+  "ssh-password": "",
+  
+  "iso-url": "",
+  "iso-checksum": "",
+  "iso-checksum-type": ""
+}

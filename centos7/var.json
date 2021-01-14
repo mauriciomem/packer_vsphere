@@ -1,0 +1,17 @@
+{
+    "cluster": "",
+    "datacenter": "",
+    "datastore": "",
+    "folder": "",
+    "iso-paths": "",
+    "network": "",
+    "ssh-password": "",
+    "ssh-username": "",
+    "vcenter-password": "",
+    "vcenter-server": "",
+    "vcenter-username": "",
+    "vm-cpu-num": "",
+    "vm-disk-size": "",
+    "vm-mem-size": "",
+    "vm-name": "{{env `vm-name`}}"
+}

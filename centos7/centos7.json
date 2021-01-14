@@ -1,0 +1,43 @@
+{
+  "builders": [
+    {
+      "CPUs": "{{user `vm-cpu-num`}}",
+      "RAM": "{{user `vm-mem-size`}}",
+      "RAM_reserve_all": true,
+      "boot_command": "<esc> <wait> linux inst.text inst.ks=hd:fd0:/ks-minimal.cfg <enter>",
+      "boot_wait": "5s",
+      "cluster": "{{ user `cluster` }}",
+      "convert_to_template": false,
+      "datacenter": "{{ user `datacenter` }}",
+      "datastore": "{{ user `datastore` }}",
+      "disk_controller_type": "pvscsi",
+      "floppy_files": [
+        "http/ks-minimal.cfg"
+      ],
+      "folder": "{{ user `folder` }}",
+      "guest_os_type": "centos7_64Guest",
+      "insecure_connection": "true",
+      "iso_paths": "{{ user `iso-paths` }}",
+      "network_adapters": [
+        {
+          "network": "{{ user `network` }}",
+          "network_card": "vmxnet3"
+        }
+      ],
+      "password": "{{ user `vcenter-password` }}",
+      "ssh_password": "{{ user `ssh-password` }}",
+      "ssh_username": "{{ user `ssh-username` }}",
+      "storage": [
+        {
+          "disk_size": "{{user `vm-disk-size`}}",
+          "disk_thin_provisioned": true
+        }
+      ],
+      "type": "vsphere-iso",
+      "username": "{{ user `vcenter-username` }}",
+      "vcenter_server": "{{ user `vcenter-server` }}",
+      "vm_name": "{{ user `vm-name` }}"
+    }
+  ]
+}
+
