@@ -4,7 +4,7 @@
 
  * Build declaration: `debian10.json`
  * Build parameters: `variables.json`
- * Kickstart file: `http/preseed.json`
+ * Preseed file: `http/preseed.json`
 
 ### Run
 
