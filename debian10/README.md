@@ -2,9 +2,9 @@
 
 ### Files
 
- * Build declaration: `centos7.json`
+ * Build declaration: `debian10.json`
  * Build parameters: `variables.json`
- * Kickstart file: `http/ks-minimal.json`
+ * Kickstart file: `http/preseed.json`
 
 ### Run
 
