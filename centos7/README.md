@@ -10,7 +10,9 @@
 
 Complete the connection parameters in variables.json and run 
 
+```
   packer build -var-file variables.json centos7.json
+```
 
 To pass values as environment variables its recommended to replace the variables declaration in variables.json with the folliwing sintax: ``"variable": "{{env `ENVVAR NAME`}}".``
 
