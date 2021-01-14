@@ -18,12 +18,15 @@ Then you can call the variables through another file, using the `-var` parameter
 
 **Building image with `-var` parameter**
 
+```
   packer build -var-file variables-env.json -var 'vmname=centos7image' centos7.json
+```
 
 **Debugging**
 
+```
   PACKER_LOG=1 packer build -var-file variables-env.json -var 'vmname=centos7image' centos7.json
-
+```
 ### References
 
 #### Docs
